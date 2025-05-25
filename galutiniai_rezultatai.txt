@@ -1,0 +1,253 @@
+Įverčiai ant nepakeisto SVM
+
+--- Originalūs duomenys ---
+Accuracy: 0.9348
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.93      1.00      0.97     28044
+           1       0.00      0.00      0.00      1956
+
+    accuracy                           0.93     30000
+   macro avg       0.47      0.50      0.48     30000
+weighted avg       0.87      0.93      0.90     30000
+
+
+--- Random Over-Sampling ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.7833
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.97      0.80      0.87     28044
+           1       0.17      0.59      0.26      1956
+
+    accuracy                           0.78     30000
+   macro avg       0.57      0.69      0.57     30000
+weighted avg       0.91      0.78      0.83     30000
+
+
+
+--- SMOTE ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.7780666666666667
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.97      0.79      0.87     28044
+           1       0.17      0.59      0.26      1956
+
+    accuracy                           0.78     30000
+   macro avg       0.57      0.69      0.56     30000
+weighted avg       0.91      0.78      0.83     30000
+
+
+
+--- Borderline-SMOTE ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.7990333333333334
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.81      0.88     28044
+           1       0.18      0.57      0.27      1956
+
+    accuracy                           0.80     30000
+   macro avg       0.57      0.69      0.58     30000
+weighted avg       0.91      0.80      0.84     30000
+
+
+
+--- SVM-SMOTE ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.8880333333333333
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.92      0.94     28044
+           1       0.26      0.40      0.32      1956
+
+    accuracy                           0.89     30000
+   macro avg       0.61      0.66      0.63     30000
+weighted avg       0.91      0.89      0.90     30000
+
+
+
+--- ADASYN ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.7530333333333333
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.97      0.76      0.85     28044
+           1       0.15      0.62      0.25      1956
+
+    accuracy                           0.75     30000
+   macro avg       0.56      0.69      0.55     30000
+weighted avg       0.91      0.75      0.81     30000
+
+
+
+--- KMeans-SMOTE ---
+Ivertinimas ant originalių duomenų:
+Accuracy: 0.8437333333333333
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.94      0.88      0.91     28044
+           1       0.14      0.26      0.18      1956
+
+    accuracy                           0.84     30000
+   macro avg       0.54      0.57      0.55     30000
+weighted avg       0.89      0.84      0.87     30000
+
+
+
+--- AUROC Rezultatai ---
+Original Dataset: 0.7194
+Random Over-Sampling: 0.7569
+SMOTE: 0.7580
+Borderline-SMOTE: 0.7569
+SVM-SMOTE: 0.7592
+ADASYN: 0.7565
+KMeans-SMOTE: 0.5919
+
+
+Optimalūs parametrai SVM modeliams
+
+Grid Search Originaliems duomenims
+Geriausi parametrai: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+Grid Search kiekvienam over-sampling metodui
+
+--- Grid Search su Random Over-Sampling ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+--- Grid Search su SMOTE ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+--- Grid Search su Borderline-SMOTE ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+--- Grid Search su SVM-SMOTE ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+--- Grid Search su ADASYN ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+--- Grid Search su KMeans-SMOTE ---
+Best Parameters: {'C': 10, 'gamma': 1, 'kernel': 'rbf'}
+
+
+Optimalūs over-sampler'ių parametrai ir rezultatų išvedimas
+
+--- Orginalūs duomenys ---
+Accuracy: 0.7811666666666667
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.79      0.87     28044
+           1       0.17      0.58      0.26      1956
+
+    accuracy                           0.78     30000
+   macro avg       0.57      0.69      0.57     30000
+weighted avg       0.91      0.78      0.83     30000
+
+
+Geriausi parametrai Random Over-Sampling: {'sampling_strategy': 0.5}
+--- Random Over-Sampling ---
+Accuracy: 0.7877
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.81      0.88     28044
+           1       0.15      0.48      0.23      1956
+
+    accuracy                           0.79     30000
+   macro avg       0.55      0.65      0.55     30000
+weighted avg       0.90      0.79      0.83     30000
+
+
+Geriausi parametrai SMOTE: {'k_neighbors': 3, 'sampling_strategy': 0.5}
+--- SMOTE ---
+Accuracy: 0.7866333333333333
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.81      0.88     28044
+           1       0.15      0.47      0.22      1956
+
+    accuracy                           0.79     30000
+   macro avg       0.55      0.64      0.55     30000
+weighted avg       0.90      0.79      0.83     30000
+
+
+
+Geriausi parametrai Borderline-SMOTE: {'k_neighbors': 3, 'm_neighbors': 10, 'sampling_strategy': 0.5}
+--- Borderline-SMOTE ---
+Accuracy: 0.8263666666666667
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.85      0.90     28044
+           1       0.17      0.43      0.24      1956
+
+    accuracy                           0.83     30000
+   macro avg       0.56      0.64      0.57     30000
+weighted avg       0.90      0.83      0.86     30000
+
+
+
+Geriausi parametrai SVM-SMOTE: {'k_neighbors': 3, 'm_neighbors': 10, 'sampling_strategy': 0.5}
+--- SVM-SMOTE ---
+Accuracy: 0.8598666666666667
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.95      0.89      0.92     28044
+           1       0.20      0.38      0.26      1956
+
+    accuracy                           0.86     30000
+   macro avg       0.58      0.64      0.59     30000
+weighted avg       0.90      0.86      0.88     30000
+
+
+
+Geriausi parametrai ADASYN: {'n_neighbors': 3, 'sampling_strategy': 0.5}
+--- ADASYN ---
+Accuracy: 0.7731666666666667
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.96      0.79      0.87     28044
+           1       0.14      0.49      0.22      1956
+
+    accuracy                           0.77     30000
+   macro avg       0.55      0.64      0.54     30000
+weighted avg       0.90      0.77      0.83     30000
+
+
+
+Geriausi parametrai KMeans-SMOTE: {'cluster_balance_threshold': 0.01, 'k_neighbors': 3, 'sampling_strategy': 0.5}
+--- KMeans-SMOTE ---
+Accuracy: 0.8370333333333333
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.95      0.88      0.91     28044
+           1       0.13      0.27      0.18      1956
+
+    accuracy                           0.84     30000
+   macro avg       0.54      0.58      0.54     30000
+weighted avg       0.89      0.84      0.86     30000
+
+
+--- AUROC Rezultatai ---
+Originalūs duomenys: 0.7414
+Random Over-Sampling: 0.8462
+SMOTE: 0.8453
+Borderline-SMOTE: 0.8270
+SVM-SMOTE: 0.8223
+ADASYN: 0.8466
+KMeans-SMOTE: 0.7391
+
